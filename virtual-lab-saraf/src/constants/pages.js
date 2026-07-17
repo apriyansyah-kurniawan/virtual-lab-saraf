@@ -1,0 +1,16 @@
+export const PAGES = {
+  LOGIN: 1,
+  TUJUAN: 2,
+  MENU: 3,
+  MATERI: 4,
+  LANGKAH: 5,
+  SIM_SENSORIK: 6,
+  SIM_PENGHUBUNG: 7,
+  SIM_MOTORIK: 8,
+  SOAL_1: 9,
+  SOAL_2: 10,
+  SOAL_3: 11,
+  SOAL_4: 12,
+  SOAL_5_ESAI: 13,
+  SKOR: 14,
+};
