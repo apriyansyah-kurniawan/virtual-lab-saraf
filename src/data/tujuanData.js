@@ -1,6 +1,6 @@
 export const TUJUAN_PRAKTIKUM = [
   "Mengidentifikasi bagian Neuron.",
-  "Menetahu alur perjalanan impuls pada rangsangan.",
+  "Mengetahui alur perjalanan impuls pada rangsangan.",
   "Menjelaskan alur perjalanan impuls pada rangsangan.",
 ];
 
@@ -24,3 +24,12 @@ export const LANGKAH_PRAKTIKUM = [
       "Saraf motorik membawa perintah dari saraf pusat menuju efektor (otot lengan). Otot berkontraksi sehingga tangan refleks tertarik menjauh dari sumber panas.",
   },
 ];
+
+export const SIM_PROMPTS = {
+  sensorik:
+    "Arahkan tangan ke permukaan kulit untuk melihat pergerakan saraf sensorik saat menghantarkan impuls ke saraf pusat.",
+  penghubung:
+    "Dorong impuls kearah saraf penghubung untuk melihat pergerakan impuls.",
+  motorik:
+    "Dorong impuls kearah saraf pusat untuk melihat pergerakan.",
+};
