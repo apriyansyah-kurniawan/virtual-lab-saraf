@@ -3,42 +3,39 @@ export default function PixelNav({
   onNext,
   showBack = true,
   showNext = true,
-  nextLabel = "NEXT",
-  backLabel = "BACK",
   nextDisabled = false,
 }) {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 pointer-events-none px-4 pb-6">
-      <div className="max-w-5xl mx-auto flex justify-between items-end">
-        {showBack ? (
-          <button
-            type="button"
-            onClick={onBack}
-            className="pointer-events-auto pixel-btn pixel-btn-back"
-            aria-label={backLabel}
-          >
-            <span className="pixel-arrow pixel-arrow-left" />
-            <span className="pixel-btn-text">{backLabel}</span>
-          </button>
-        ) : (
-          <span />
-        )}
+    <div
+      className="fixed bottom-6 left-6 right-6 z-50 flex items-center justify-between pointer-events-none select-none"
+      aria-label="Navigasi halaman"
+    >
+      {showBack ? (
+        <button
+          type="button"
+          onClick={onBack}
+          className="pointer-events-auto pixel-btn pixel-btn-nav select-none hover:bg-green-500 active:scale-95 transition-transform duration-150"
+          aria-label="Navigasi kiri"
+        >
+          <span className="pixel-arrow pixel-arrow-left" />
+        </button>
+      ) : (
+        <span className="w-[3.25rem]" aria-hidden="true" />
+      )}
 
-        {showNext ? (
-          <button
-            type="button"
-            onClick={onNext}
-            disabled={nextDisabled}
-            className="pointer-events-auto pixel-btn pixel-btn-next disabled:opacity-40 disabled:cursor-not-allowed"
-            aria-label={nextLabel}
-          >
-            <span className="pixel-btn-text">{nextLabel}</span>
-            <span className="pixel-arrow pixel-arrow-right" />
-          </button>
-        ) : (
-          <span />
-        )}
-      </div>
+      {showNext ? (
+        <button
+          type="button"
+          onClick={onNext}
+          disabled={nextDisabled}
+          className="pointer-events-auto pixel-btn pixel-btn-nav select-none hover:bg-green-500 active:scale-95 transition-transform duration-150 disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100"
+          aria-label="Navigasi kanan"
+        >
+          <span className="pixel-arrow pixel-arrow-right" />
+        </button>
+      ) : (
+        <span className="w-[3.25rem]" aria-hidden="true" />
+      )}
     </div>
   );
 }

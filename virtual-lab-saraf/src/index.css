@@ -1,55 +1,10 @@
 @import "tailwindcss";
 
-/* Pixel-style green navigation buttons */
-.pixel-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.1rem;
-  background-color: #22c55e;
-  border: 4px solid #1e293b;
-  border-radius: 0.5rem;
-  box-shadow: 4px 4px 0 #1e293b;
-  font-weight: 800;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #0f172a;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.pixel-btn:hover:not(:disabled) {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #1e293b;
-  background-color: #4ade80;
-}
-
-.pixel-btn:active:not(:disabled) {
-  transform: translate(4px, 4px);
-  box-shadow: 0 0 0 #1e293b;
-}
-
-.pixel-arrow {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-
-.pixel-arrow-left {
-  border-width: 8px 12px 8px 0;
-  border-color: transparent #1e293b transparent transparent;
-}
-
-.pixel-arrow-right {
-  border-width: 8px 0 8px 12px;
-  border-color: transparent transparent transparent #1e293b;
-}
-
-@keyframes slide-up {
+/* Page transition — fade + slide up on route change */
+@keyframes page-enter {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -57,10 +12,347 @@
   }
 }
 
-.animate-slide-up {
-  animation: slide-up 0.3s ease-out;
+.page-enter {
+  animation: page-enter 400ms ease-out both;
+}
+
+/* Shared content card */
+.content-card {
+  width: 100%;
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 4px solid #1e293b;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 0 #1e293b;
+  padding: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .content-card {
+    padding: 2rem;
+  }
+}
+
+/* Interactive button base */
+.interactive-btn {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 150ms ease,
+    background-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.interactive-btn:hover:not(:disabled) {
+  background-color: #bbf7d0;
+}
+
+.interactive-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.interactive-btn-primary {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.interactive-btn-primary:hover:not(:disabled) {
+  background-color: #34d399;
+}
+
+.interactive-btn-primary:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* Pixel-style green navigation arrows */
+.pixel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0;
+  background-color: #22c55e;
+  border: 4px solid #1e293b;
+  border-radius: 0.35rem;
+  box-shadow: 4px 4px 0 #1e293b;
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pixel-btn-nav {
+  position: relative;
+  z-index: 51;
+  flex-shrink: 0;
+  background-color: #22c55e;
+  box-shadow:
+    4px 4px 0 #1e293b,
+    0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+
+.pixel-btn:hover:not(:disabled) {
+  background-color: #16a34a;
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 #1e293b;
+}
+
+.pixel-btn:active:not(:disabled) {
+  transform: scale(0.95);
+  box-shadow: 2px 2px 0 #1e293b;
+}
+
+.pixel-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  pointer-events: none;
+}
+
+.pixel-arrow-left {
+  border-width: 10px 14px 10px 0;
+  border-color: transparent #1e293b transparent transparent;
+}
+
+.pixel-arrow-right {
+  border-width: 10px 0 10px 14px;
+  border-color: transparent transparent transparent #1e293b;
+}
+
+/* Pixelated grey definition card */
+.pixel-grey-card {
+  background-color: #cbd5e1;
+  border: 4px solid #1e293b;
+  border-radius: 0.5rem;
+  box-shadow: 6px 6px 0 #1e293b;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.pixel-grey-card-title {
+  font-weight: 800;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #64748b;
+}
+
+.pixel-grey-card-body {
+  color: #1e293b;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Menu banner & text links */
+.menu-banner {
+  background-color: #ffffff;
+  border: 4px solid #1e293b;
+  border-radius: 0.75rem;
+  box-shadow: 5px 5px 0 #1e293b;
+  padding: 1.25rem 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.menu-banner-text {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.menu-link-block {
+  width: 100%;
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1rem 1.5rem;
+  background-color: #ffffff;
+  border: 4px solid #1e293b;
+  border-radius: 0.75rem;
+  box-shadow: 4px 4px 0 #1e293b;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+
+.menu-link-block:hover {
+  background-color: #bbf7d0;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #1e293b;
+}
+
+.menu-link-block:active {
+  transform: scale(0.95);
+  box-shadow: 1px 1px 0 #1e293b;
+}
+
+/* Organel hotspot buttons */
+.organel-btn {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.organel-btn:hover {
+  background-color: #bbf7d0;
+  transform: scale(1.05);
+}
+
+.organel-btn:active {
+  transform: scale(0.95);
+}
+
+.organel-grid-btn {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.organel-grid-btn:hover {
+  background-color: #bbf7d0;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #1e293b;
+}
+
+.organel-grid-btn:active {
+  transform: scale(0.95);
+}
+
+/* Quiz option buttons */
+.quiz-option {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+.quiz-option:hover:not(:disabled) {
+  background-color: #ecfdf5;
+  border-color: #1e293b;
+}
+
+.quiz-option:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Simulation & quiz prompt lines */
+.prompt-line {
+  background-color: #ffffff;
+  border: 3px solid #1e293b;
+  border-radius: 0.75rem;
+  box-shadow: 3px 3px 0 #1e293b;
+  padding: 0.875rem 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
+}
+
+.sim-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .sim-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.sim-card {
+  width: 100%;
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 4px solid #1e293b;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 0 #1e293b;
+  padding: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .sim-card {
+    padding: 2rem;
+  }
+}
+
+.sim-diagram-card {
+  min-height: 220px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .sim-diagram-card {
+    min-height: 300px;
+  }
+}
+
+.sim-diagram-svg {
+  width: 100%;
+  min-height: 220px;
+  height: 220px;
+}
+
+@media (min-width: 640px) {
+  .sim-diagram-svg {
+    height: 260px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sim-diagram-svg {
+    height: 280px;
+  }
+}
+
+.score-action-btn {
+  border: 3px solid #1e293b;
+  border-radius: 0.75rem;
+  box-shadow: 3px 3px 0 #1e293b;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding: 0.75rem 0.5rem;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+
+.score-action-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #1e293b;
+}
+
+.score-action-btn:active {
+  transform: scale(0.95);
 }
 
 .border-3 {
   border-width: 3px;
+}
+
+.border-b-3 {
+  border-bottom-width: 3px;
+}
+
+.border-t-3 {
+  border-top-width: 3px;
 }

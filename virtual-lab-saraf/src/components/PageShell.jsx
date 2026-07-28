@@ -1,3 +1,4 @@
+import { usePageKey } from "../context/PageContext";
 import PixelNav from "./PixelNav";
 
 export default function PageShell({
@@ -8,17 +9,31 @@ export default function PageShell({
   showBack = true,
   showNext = true,
   nextDisabled = false,
-  nextLabel,
-  backLabel,
   withNav = true,
+  wide = false,
+  centered = false,
 }) {
+  const pageKey = usePageKey();
+
   return (
     <div
-      className={`min-h-screen w-full bg-[#9ee4ff] text-slate-900 font-sans ${className}`}
+      className={`min-h-dvh w-full max-w-full overflow-x-hidden overflow-y-auto bg-[#9ee4ff] text-slate-900 font-sans ${className}`}
     >
-      <div className={`max-w-5xl mx-auto px-4 sm:px-8 py-8 ${withNav ? "pb-28" : "pb-8"}`}>
-        {children}
+      <div
+        className={`mx-auto w-full px-4 md:px-6 pt-5 md:pt-8 ${
+          withNav ? "pb-28" : "pb-8"
+        } ${wide ? "max-w-4xl" : "max-w-2xl"}`}
+      >
+        <div
+          key={pageKey}
+          className={`page-enter w-full max-w-full ${
+            centered ? "min-h-[calc(100dvh-8rem)] flex items-center justify-center" : ""
+          }`}
+        >
+          {children}
+        </div>
       </div>
+
       {withNav && (
         <PixelNav
           onBack={onBack}
@@ -26,8 +41,6 @@ export default function PageShell({
           showBack={showBack}
           showNext={showNext}
           nextDisabled={nextDisabled}
-          nextLabel={nextLabel}
-          backLabel={backLabel}
         />
       )}
     </div>
