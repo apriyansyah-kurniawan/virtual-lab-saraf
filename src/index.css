@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Ensure full viewport height and remove default margins */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 /* Page transition — fade + slide up on route change */
 @keyframes page-enter {
   from {
@@ -355,4 +363,12 @@
 
 .border-t-3 {
   border-top-width: 3px;
+}
+
+/* Pixel font utilities */
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+}
+.font-silkscreen {
+  font-family: 'Silkscreen', cursive;
 }

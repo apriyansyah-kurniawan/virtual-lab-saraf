@@ -56,6 +56,61 @@ export const QUESTION_BANK = [
     },
     kunci: "D",
   },
+  {
+    id: 6,
+    soal: "Pada simulasi neuron, impuls bergerak dari dendrit menuju badan sel. Apa fungsi utama dendrit dalam proses tersebut?",
+    opsi: {
+      A: "Menghantarkan impuls keluar menuju otot",
+      B: "Menerima rangsangan dan meneruskannya ke badan sel",
+      C: "Membentuk selubung mielin pada akson",
+      D: "Menghubungkan neuron dengan otot"
+    },
+    kunci: "B",
+  },
+  {
+    id: 7,
+    soal: "Saat melakukan simulasi, impuls dapat bergerak lebih cepat sepanjang akson yang memiliki selubung mielin. Hal tersebut terjadi karena…",
+    opsi: {
+      A: "Impuls bergerak melalui inti sel",
+      B: "Mielin menghasilkan rangsangan baru",
+      C: "Impuls dapat melompat dari satu nodus Ranvier ke nodus berikutnya",
+      D: "Mielin mengubah impuls menjadi gerakan otot"
+    },
+    kunci: "C",
+  },
+  {
+    id: 8,
+    soal: "Dalam simulasi gerak refleks, setelah impuls melewati saraf penghubung di sumsum tulang belakang, impuls selanjutnya diteruskan melalui…",
+    opsi: {
+      A: "Saraf sensorik menuju kulit",
+      B: "Saraf motorik menuju efektor",
+      C: "Dendrit menuju reseptor",
+      D: "Saraf sensorik menuju otak"
+    },
+    kunci: "B",
+  },
+  {
+    id: 9,
+    soal: "Perhatikan simulasi ketika jari menyentuh permukaan dan muncul titik cahaya yang bergerak menuju saraf pusat. Titik cahaya tersebut menunjukkan…",
+    opsi: {
+      A: "Aliran darah",
+      B: "Gerakan otot",
+      C: "Perjalanan impuls saraf",
+      D: "Pergerakan sel darah merah"
+    },
+    kunci: "C",
+  },
+  {
+    id: 10,
+    soal: "Jika bagian akson pada neuron mengalami gangguan, dampak yang paling mungkin terjadi berdasarkan fungsi bagian tersebut adalah…",
+    opsi: {
+      A: "Penerimaan rangsangan dari reseptor terganggu",
+      B: "Penghantaran impuls dari badan sel menuju neuron atau efektor terganggu",
+      C: "Pembentukan DNA di dalam nukleus berhenti",
+      D: "Sel Schwann tidak dapat menerima rangsangan"
+    },
+    kunci: "B",
+  }
 ];
 
 export const ESAI_PROMPT =

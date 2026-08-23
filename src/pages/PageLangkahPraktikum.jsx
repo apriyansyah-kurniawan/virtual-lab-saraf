@@ -3,7 +3,7 @@ import { LANGKAH_PRAKTIKUM } from "../data/tujuanData";
 
 export default function PageLangkahPraktikum({ onBack, onNext }) {
   return (
-    <PageShell onBack={onBack} onNext={onNext} wide>
+    <PageShell onBack={onBack} onNext={onNext}>
       <div className="mb-6 md:mb-8 text-center">
         <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase">
           Langkah Praktikum
