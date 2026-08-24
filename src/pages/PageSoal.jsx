@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import PageShell from "../components/PageShell";
+import RetroButton from "../components/RetroButton";
 import { QUESTION_BANK } from "../data/questions.js";
 import { submitQuizScore } from "../QuizScoreSubmitter.js";
 
@@ -186,31 +187,19 @@ export default function PageSoal({ onNavigate, nama = "Siswa", kelas = "-" }) {
             {/* Opsi Tombol Aksi */}
             <div className="flex flex-col gap-3 w-full mt-4">
               {/* Tombol Ulangi Kuis */}
-              <button
-                type="button"
-                onClick={handleResetQuiz}
-                className="bg-[#F6AD55] hover:bg-[#ED8936] text-slate-900 border-[3.5px] border-slate-900 rounded-2xl font-['Press_Start_2P'] text-xs py-3 px-4 shadow-[4px_4px_0_#000] active:translate-y-1"
-              >
+              <RetroButton variant="yellow" onClick={handleResetQuiz}>
                 🔄 ULANGI KUIS
-              </button>
+              </RetroButton>
 
               {/* Tombol Daftar Pustaka */}
-              <button
-                type="button"
-                onClick={() => onNavigate('dafpus')}
-                className="bg-[#63B3ED] hover:bg-[#4299E1] text-white border-[3.5px] border-slate-900 rounded-2xl font-['Press_Start_2P'] text-xs py-3 px-4 shadow-[4px_4px_0_#000] active:translate-y-1"
-              >
+              <RetroButton variant="blue" onClick={() => onNavigate('dafpus')}>
                 📚 DAFTAR PUSTAKA
-              </button>
+              </RetroButton>
 
               {/* Tombol Kembali ke Menu */}
-              <button
-                type="button"
-                onClick={() => onNavigate('menu')}
-                className="bg-[#5CB85C] hover:bg-[#4CAE4C] text-white border-[3.5px] border-slate-900 rounded-2xl font-['Press_Start_2P'] text-xs py-3 px-4 shadow-[4px_4px_0_#000] active:translate-y-1"
-              >
+              <RetroButton variant="green" onClick={() => onNavigate('menu')}>
                 🏠 KEMBALI KE MENU
-              </button>
+              </RetroButton>
             </div>
           </div>
         </div>

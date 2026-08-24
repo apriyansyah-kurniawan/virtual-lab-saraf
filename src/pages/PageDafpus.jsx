@@ -1,5 +1,6 @@
 import React from "react";
 import PageShell from "../components/PageShell";
+import RetroButton from "../components/RetroButton";
 
 const DAFTAR_PUSTAKA = [
   {
@@ -74,13 +75,9 @@ export default function PageDafpus({ onNavigate }) {
 
           {/* Tombol Balik ke Menu */}
           <div className="mt-6 flex justify-center">
-            <button
-              type="button"
-              onClick={() => onNavigate('menu')}
-              className="px-6 py-3 bg-[#5CB85C] hover:bg-[#4CAE4C] border-[3.5px] border-slate-900 rounded-2xl font-['Press_Start_2P'] text-xs text-white shadow-[4px_4px_0px_#000] active:translate-y-1 transition-all cursor-pointer"
-            >
+            <RetroButton variant="green" onClick={() => onNavigate('menu')}>
               KEMBALI KE MENU
-            </button>
+            </RetroButton>
           </div>
 
         </div>

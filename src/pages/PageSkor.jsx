@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import PageShell from "../components/PageShell";
+import RetroButton from "../components/RetroButton";
 import { BIBLIOGRAPHY } from "../data/questions";
 import { supabase, isSupabaseConfigured } from "../lib/supabaseClient";
 
@@ -79,20 +80,12 @@ export default function PageSkor({
           )}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-2">
-            <button
-              type="button"
-              onClick={onUlangi}
-              className="score-action-btn select-none bg-amber-400 hover:bg-amber-300"
-            >
+            <RetroButton variant="yellow" onClick={onUlangi}>
               Ulangi Game
-            </button>
-            <button
-              type="button"
-              onClick={onMenu}
-              className="score-action-btn select-none bg-sky-400 hover:bg-sky-300"
-            >
+            </RetroButton>
+            <RetroButton variant="blue" onClick={onMenu}>
               Menu
-            </button>
+            </RetroButton>
           </div>
         </div>
 

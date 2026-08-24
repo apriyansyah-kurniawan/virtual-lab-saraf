@@ -1,5 +1,6 @@
 import { useState } from "react";
 import scientistImg from '../assets/scientist.png';
+import RetroButton from "../components/RetroButton";
 
 export default function PageHome({ onStart }) {
   return (
@@ -19,12 +20,9 @@ export default function PageHome({ onStart }) {
           <h1 className="font-['Press_Start_2P'] text-2xl md:text-3xl lg:text-4xl text-slate-900 leading-relaxed uppercase mb-6">
             SISTEM SARAF MANUSIA
           </h1>
-          <button
-            onClick={onStart}
-            className="font-['Press_Start_2P'] text-xl md:text-2xl px-12 py-4 bg-[#48BB78] hover:bg-[#38A169] text-white border-[4px] border-slate-900 rounded-2xl shadow-[6px_6px_0px_#000] active:translate-y-1 active:shadow-[2px_2px_0px_#000] cursor-pointer"
-          >
+          <RetroButton variant="green" onClick={onStart}>
             START
-          </button>
+          </RetroButton>
         </div>
       </div>
     </div>

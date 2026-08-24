@@ -372,3 +372,93 @@ html, body, #root {
 .font-silkscreen {
   font-family: 'Silkscreen', cursive;
 }
+
+/* Keyframes for sensorik simulation */
+@keyframes merambat {
+  0% { left: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+.animate-merambat {
+  animation: merambat 2.5s ease-in-out infinite;
+}
+
+/* Keyframes for sensorik impulse animation */
+@keyframes merambatImpuls {
+  0% {
+    left: 0%;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+.animate-merambat-impuls {
+  animation: merambatImpuls 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Keyframes for precise linear impulse animation */
+@keyframes impulsLinear {
+  0% {
+    left: 0%;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+.animate-impuls-linear {
+  animation: impulsLinear 2s linear infinite;
+}
+
+/* Keyframes for glowing impulse animation */
+@keyframes impulsGlowing {
+  0% {
+    left: 0%;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.animate-impuls-glowing {
+  animation: impulsGlowing 2s linear infinite;
+}

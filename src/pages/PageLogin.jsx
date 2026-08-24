@@ -1,6 +1,8 @@
 import { useState } from "react";
+import PageShell from "../components/PageShell";
+import RetroButton from "../components/RetroButton";
 
-export default function PageLogin({ nama, setNama, kelas, setKelas, onStart }) {
+export default function PageLogin({ nama, setNama, kelas, setKelas, onStart, onBack }) {
   const [error, setError] = useState("");
 
   const handleStart = () => {
@@ -16,9 +18,18 @@ export default function PageLogin({ nama, setNama, kelas, setKelas, onStart }) {
     onStart();
   };
 
+  const isValid = nama.trim() !== "" && kelas !== "";
+
   return (
-    <div className="min-h-screen w-full bg-[#B2E2F8] flex items-center justify-center p-4 py-8 overflow-y-auto">
-      <div className="w-full max-w-md bg-white border-[3.5px] border-slate-900 rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_#000]">
+    <PageShell
+      onBack={onBack}
+      onNext={handleStart}
+      showBack={true}
+      showNext={false}
+      nextDisabled={!isValid}
+    >
+      {/* Card Konten */}
+      <div className="w-full max-w-md bg-white border-[3.5px] border-slate-900 rounded-3xl p-6 sm:p-8 shadow-[6px_6px_0px_#000] pb-4">
         <div className="mx-auto mb-6 flex flex-col w-20 h-20 rounded-2xl border-[3.5px] border-slate-900 overflow-hidden flex flex-col bg-white shadow-[4px_4px_0px_#000]">
           <div className="h-5 bg-sky-300 border-b-[2.5px] border-slate-900 w-full shrink-0"></div>
           <div className="flex-1 bg-white flex items-center justify-center text-emerald-600 font-black text-2xl">
@@ -71,14 +82,17 @@ export default function PageLogin({ nama, setNama, kelas, setKelas, onStart }) {
           )}
 
           <button
-            style={{ fontFamily: "'Press Start 2P', monospace" }}
-            className="w-full py-3.5 bg-[#48BB78] hover:bg-[#38A169] text-white border-[3.5px] border-slate-900 rounded-2xl shadow-[4px_4px_0px_#000] active:translate-y-1 active:shadow-[1px_1px_0px_#000] text-sm tracking-wider cursor-pointer mt-4 transition-all"
+            type="button"
             onClick={handleStart}
+            disabled={!nama.trim() || !kelas}
+            className={`w-full mt-6 py-3.5 bg-[#5CB85C] hover:bg-[#4CAE4C] text-white border-[3.5px] border-slate-900 rounded-2xl font-['Press_Start_2P'] text-xs sm:text-sm shadow-[4px_4px_0px_#000] active:translate-y-1 active:shadow-[1px_1px_0px_#000] transition-all cursor-pointer ${
+              (!nama.trim() || !kelas) ? "opacity-50 cursor-not-allowed pointer-events-none" : ""
+            }`}
           >
             LANJUTKAN
           </button>
         </div>
       </div>
-    </div>
+    </PageShell>
   );
 }

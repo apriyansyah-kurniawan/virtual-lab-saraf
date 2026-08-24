@@ -109,6 +109,7 @@ export default function VirtualLabSarafApp() {
             kelas={kelas}
             setKelas={setKelas}
             onStart={() => goTo(PAGES.tujuan)}
+            onBack={() => goTo(PAGES.home)}
           />
         );
       case PAGES.tujuan:
@@ -121,12 +122,12 @@ export default function VirtualLabSarafApp() {
       case PAGES.menu:
         return (
           <PageMenu
-            onNavigate={(module) => {
-              if (module === "materi-definisi") goTo(PAGES.materi_definisi);
-              if (module === "langkah-praktikum") goTo(PAGES.langkah);
-              if (module === "soal") goTo(PAGES.soal_1);
-              if (module === "login") goTo(PAGES.login);
-              if (module === "tujuan") goTo(PAGES.tujuan);
+            onBack={() => goTo(PAGES.tujuan)}
+            onNavigate={(target) => {
+              if (target === 'materi') goTo(PAGES.materi_diagram);
+              else if (target === 'praktikum') goTo(PAGES.langkah);
+              else if (target === 'soal') goTo(PAGES.soal_1);
+              else if (target === 'tujuan') goTo(PAGES.tujuan);
             }}
           />
         );
@@ -250,6 +251,7 @@ export default function VirtualLabSarafApp() {
             kelas={kelas}
             setKelas={setKelas}
             onStart={() => goTo(PAGES.tujuan)}
+            onBack={() => goTo(PAGES.home)}
           />
         );
     }
