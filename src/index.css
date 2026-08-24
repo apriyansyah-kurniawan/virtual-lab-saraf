@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 /* Ensure full viewport height and remove default margins */
-html, body, #root {
-  height: 100%;
+html,
+body,
+#root {
+  background-color: #BAE6FD !important;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
   overflow: visible;

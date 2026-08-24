@@ -9,10 +9,10 @@ export default function PageShell({
   showBack = true,
   showNext = true,
   nextDisabled = false,
-  className = ""
+  className = ''
 }) {
   return (
-    <div className={`min-h-[100dvh] w-full overflow-y-auto overflow-x-hidden flex flex-col items-center justify-start sm:justify-center p-3 sm:p-6 pb-24 sm:pb-6 ${className}`}>
+    <div className={`min-h-[100dvh] w-full bg-[#BAE6FD] overflow-y-auto overflow-x-hidden flex flex-col items-center justify-start sm:justify-center p-3 sm:p-6 pb-24 sm:pb-6 ${className}`}>
       {/* Konten Utama */}
       <main className="flex-1 flex items-center justify-center w-full z-10">
         {children}
