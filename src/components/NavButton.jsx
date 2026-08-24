@@ -11,7 +11,7 @@ export default function NavButton({ direction = 'back', onClick, disabled = fals
       }}
       disabled={disabled}
       aria-label={isBack ? "Kembali" : "Lanjut"}
-      className={`w-12 h-12 md:w-14 md:h-14 bg-[#5CB85C] hover:bg-[#4CAE4C] active:bg-[#449D44] border-[3.5px] border-slate-900 rounded-2xl flex items-center justify-center shadow-[4px_4px_0px_#000] active:translate-y-1 active:shadow-[1px_1px_0px_#000] transition-all cursor-pointer select-none pointer-events-auto z-50 shrink-0 ${
+      className={`relative w-12 h-12 md:w-14 md:h-14 bg-[#5CB85C] hover:bg-[#4CAE4C] active:bg-[#449D44] border-[3.5px] border-slate-900 rounded-2xl flex items-center justify-center shadow-[4px_4px_0px_#000] active:translate-y-1 active:shadow-[1px_1px_0px_#000] transition-all cursor-pointer select-none pointer-events-auto z-50 shrink-0 ${
         disabled ? "opacity-40 cursor-not-allowed !pointer-events-none" : ""
       } ${className}`}
     >

@@ -1,5 +1,6 @@
 import React from 'react';
 import NavButton from './NavButton';
+import LandscapeToast from './LandscapeToast';
 
 export default function PageShell({
   children,
@@ -11,11 +12,14 @@ export default function PageShell({
   className = ""
 }) {
   return (
-    <div className={`min-h-[100dvh] bg-[#B2E2F8] relative flex flex-col justify-between overflow-x-hidden ${className}`}>
+    <div className={`min-h-[100dvh] w-full overflow-y-auto overflow-x-hidden flex flex-col items-center justify-start sm:justify-center p-3 sm:p-6 pb-24 sm:pb-6 ${className}`}>
       {/* Konten Utama */}
       <main className="flex-1 flex items-center justify-center w-full z-10">
         {children}
       </main>
+
+      {/* Toast Notifikasi Orientasi Landscape */}
+      <LandscapeToast />
 
       {/* Container Navigasi Luar */}
       <div className="fixed bottom-6 left-6 right-6 flex justify-between items-center pointer-events-none z-50">

@@ -14,16 +14,16 @@ export default function PageSimPenghubung({ onBack, onNext }) {
 
           {/* Header */}
           <div className="bg-[#E0F2FE] border-2 border-slate-900 rounded-2xl px-5 py-2 mb-2 text-center w-full max-w-2xl flex items-center justify-center gap-3">
-            <span className="bg-[#F97316] text-white font-['Press_Start_2P'] text-[9px] px-2.5 py-1 rounded-lg border-2 border-slate-900 shadow-[1.5px_1.5px_0px_#000]">
+            <span className="bg-[#F97316] text-white font-['Press_Start_2P'] text-xs sm:text-sm md:text-base text-slate-900 px-2.5 py-1 rounded-lg border-2 border-slate-900 shadow-[1.5px_1.5px_0px_#000]">
               Penghubung
             </span>
-            <span className="text-xs sm:text-sm text-slate-800 font-bold">
+            <span className="text-[10px] sm:text-[11px] md:text-xs text-slate-800 font-bold">
               Dorong impuls ke arah interneuron untuk melihat transmisi sinyal antar saraf.
             </span>
           </div>
 
           {/* Kanvas Simulasi */}
-          <div className="relative w-full max-w-3xl aspect-[800/360] flex items-center justify-center select-none overflow-hidden my-auto">
+          <div className="relative w-full max-w-4xl aspect-[800/360] flex items-center justify-center select-none overflow-hidden my-auto">
             <img
               src={imgJalurPenghubung}
               alt="Saraf Penghubung (Interneuron)"
@@ -41,7 +41,7 @@ export default function PageSimPenghubung({ onBack, onNext }) {
               <div className="w-10 h-10 rounded-full bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-500 border-2 border-slate-900 shadow-[0_0_15px_#FACC15] flex items-center justify-center">
                 <span className="text-xs">⚡</span>
               </div>
-              <span className={`mt-1 border-2 border-slate-900 font-['Press_Start_2P'] text-[7px] px-2 py=0.5 rounded-md shadow-[2px_2px_0px_#000] ${
+              <span className={`mt-1 border-2 border-slate-900 font-['Press_Start_2P'] text-[7px] sm:text-[8px] md:text-[9px] px-2 py-0.5 rounded-md shadow-[2px_2px_0px_#000] ${
                 active ? 'bg-[#86EFAC]' : 'bg-[#FEF08A]'
               }`}>
                 {active ? 'TERKIRIM' : 'DORONG IMPULS'}
@@ -53,9 +53,9 @@ export default function PageSimPenghubung({ onBack, onNext }) {
               <div
                 style={{
                   position: 'absolute',
-                  left: '32%',
-                  top: '48%',
-                  width: '42%',
+                  left: '26%',
+                  top: '56%',
+                  width: '48%',
                   height: '30px',
                   transform: 'translateY(-50%)',
                   pointerEvents: 'none',
@@ -89,7 +89,7 @@ export default function PageSimPenghubung({ onBack, onNext }) {
               <button
                 type="button"
                 onClick={() => setActive(false)}
-                className="px-3 py-1.5 bg-[#E2E8F0] hover:bg-[#CBD5E1] text-slate-900 border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[8px] cursor-pointer shadow-[2px_2px_0px_#000] active:translate-y-0.5"
+                className="px-3 py-1.5 bg-[#E2E8F0] hover:bg-[#CBD5E1] text-slate-900 border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7px] sm:text-[8px] md:text-[9px] cursor-pointer shadow-[2px_2px_0px_#000] active:translate-y-0.5"
               >
                 ULANGI
               </button>

@@ -70,16 +70,16 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
 
           {/* Header */}
           <div className="text-center mb-1">
-            <h1 className="font-['Press_Start_2P'] text-sm sm:text-base text-slate-900 tracking-wide mb-1">
+            <h1 className="font-['Press_Start_2P'] text-xs sm:text-sm md:text-base text-slate-900 tracking-wide mb-1">
               STRUKTUR NEURON
             </h1>
-            <p className="text-[11px] sm:text-xs text-slate-600 font-semibold">
+            <p className="text-[10px] sm:text-[11px] md:text-xs text-slate-600 font-semibold">
               🚨 sentuh kolom untuk melihat materi
             </p>
           </div>
 
           {/* Kanvas ViewBox 800 x 420 Terkunci Presisi Canva */}
-          <div className="relative w-full max-w-3xl aspect-[800/420] flex items-center justify-center select-none my-auto">
+          <div className="relative w-full max-w-4xl aspect-[800/420] flex items-center justify-center select-none my-auto">
 
             {/* Gambar Ilustrasi Sel Neuron di Tengah */}
             <img
@@ -125,7 +125,7 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
               type="button"
               onClick={() => setSelected(ORGANEL_DATA.dendrit)}
               style={{ left: '28%', top: '21.4%', transform: 'translate(-50%, -50%)' }}
-              className="absolute px-3 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 whitespace-nowrap active:scale-95 transition-all"
+              className="absolute px-3 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7px] sm:text-[8px] md:text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 whitespace-nowrap active:scale-95 transition-all"
             >
               DENDRIT
             </button>
@@ -135,7 +135,7 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
               type="button"
               onClick={() => setSelected(ORGANEL_DATA.mielin)}
               style={{ left: '49%', top: '27%', transform: 'translate(-50%, -50%)' }}
-              className="absolute px-2.5 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7.5px] sm:text-[8px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 text-center leading-tight whitespace-nowrap active:scale-95 transition-all"
+              className="absolute px-2.5 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7px] sm:text-[8px] md:text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 text-center leading-tight whitespace-nowrap active:scale-95 transition-all"
             >
               SELUBUNG<br/>MIELIN
             </button>
@@ -145,7 +145,7 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
               type="button"
               onClick={() => setSelected(ORGANEL_DATA.nodus)}
               style={{ left: '60.3%', top: '30%', transform: 'translate(-50%, -50%)' }}
-              className="absolute px-2.5 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7.5px] sm:text-[8px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 text-center leading-tight whitespace-nowrap active:scale-95 transition-all"
+              className="absolute px-2.5 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7px] sm:text-[8px] md:text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 text-center leading-tight whitespace-nowrap active:scale-95 transition-all"
             >
               NODUS<br/>RANVIER
             </button>
@@ -155,7 +155,7 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
               type="button"
               onClick={() => setSelected(ORGANEL_DATA.badan_sel)}
               style={{ left: '25.6%', top: '54.8%', transform: 'translate(-50%, -50%)' }}
-              className="absolute px-3 py-1.5 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 whitespace-nowrap active:scale-95 transition-all text-center leading-tight"
+              className="absolute px-3 py-1.5 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7px] sm:text-[8px] md:text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 whitespace-nowrap active:scale-95 transition-all text-center leading-tight"
             >
               BADAN<br/>SEL
             </button>
@@ -165,7 +165,7 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
               type="button"
               onClick={() => setSelected(ORGANEL_DATA.nukleus)}
               style={{ left: '25%', top: '71.4%', transform: 'translate(-50%, -50%)' }}
-              className="absolute px-3 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 whitespace-nowrap active:scale-95 transition-all"
+              className="absolute px-3 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7px] sm:text-[8px] md:text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 whitespace-nowrap active:scale-95 transition-all"
             >
               NUKLEUS
             </button>
@@ -175,7 +175,7 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
               type="button"
               onClick={() => setSelected(ORGANEL_DATA.akson)}
               style={{ left: '47%', top: '79%', transform: 'translate(-50%, -50%)' }}
-              className="absolute px-3 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 whitespace-nowrap active:scale-95 transition-all"
+              className="absolute px-3 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7px] sm:text-[8px] md:text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 whitespace-nowrap active:scale-95 transition-all"
             >
               AKSON
             </button>
@@ -185,7 +185,7 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
               type="button"
               onClick={() => setSelected(ORGANEL_DATA.schwann)}
               style={{ left: '58.3%', top: '80.5%', transform: 'translate(-50%, -50%)' }}
-              className="absolute px-2.5 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7.5px] sm:text-[8px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 text-center leading-tight whitespace-nowrap active:scale-95 transition-all"
+              className="absolute px-2.5 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7px] sm:text-[8px] md:text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 text-center leading-tight whitespace-nowrap active:scale-95 transition-all"
             >
               SEL<br/>SCHWANN
             </button>
@@ -195,7 +195,7 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
               type="button"
               onClick={() => setSelected(ORGANEL_DATA.sinapsis)}
               style={{ left: '72%', top: '80.5%', transform: 'translate(-50%, -50%)' }}
-              className="absolute px-3 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 whitespace-nowrap active:scale-95 transition-all"
+              className="absolute px-3 py-1 bg-white hover:bg-[#5CB85C] hover:text-white border-2 border-slate-900 rounded-xl font-['Press_Start_2P'] text-[7px] sm:text-[8px] md:text-[9px] shadow-[2.5px_2.5px_0px_#000] cursor-pointer z-20 whitespace-nowrap active:scale-95 transition-all"
             >
               SINAPSIS
             </button>
@@ -215,7 +215,7 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
                 <button
                   type="button"
                   onClick={() => setSelected(null)}
-                  className="w-7 h-7 bg-[#F87171] text-white border-2 border-slate-900 rounded-lg flex items-center justify-center font-bold text-xs hover:bg-[#EF4444] cursor-pointer"
+                  className="w-9 h-9 bg-[#F87171] text-white border-2 border-slate-900 rounded-lg flex items-center justify-center font-bold text-xs hover:bg-[#EF4444] cursor-pointer"
                 >
                   ✕
                 </button>
