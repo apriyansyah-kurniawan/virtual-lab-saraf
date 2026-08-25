@@ -538,3 +538,18 @@ body,
 .animate-page-enter {
   animation: animate-page-enter 0.25s ease-out both;
 }
+
+/* Animasi menuang air panas yang halus */
+@keyframes cupPourSmooth {
+  0%, 100% {
+    transform: rotate(-10deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(28deg) translateY(4px);
+  }
+}
+
+.animate-cup-pour {
+  animation: cupPourSmooth 2.2s ease-in-out infinite;
+  transform-origin: 65% 70%;
+}

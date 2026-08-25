@@ -4,7 +4,7 @@ import RetroButton from "../components/RetroButton";
 import { QUESTION_BANK } from "../data/questions.js";
 import { submitQuizScore } from "../QuizScoreSubmitter.js";
 
-const ESSAY_QUESTION = "Tuliskan hasil observasi Anda selama praktikum sistem saraf, termasuk struktur dan fungsi komponen sistem saraf yang Anda pelajari!";
+const ESSAY_QUESTION = "Berdasarkan simulasi yang telah dilaksanakan, jelaskan bagaimana proses gerak refleks terjadi dan bagaimana peran sistem saraf dalam merespons rangsangan panas. Jelaskan pendapatmu berdasarkan hasil simulasi yang telah dilakukan!";
 const KESUMPULAN_PROMPT = "Buatlah kesimpulan singkat tentang apa yang Anda pelajari dari praktikum sistem saraf ini!";
 
 // Fisher-Yates shuffle algorithm

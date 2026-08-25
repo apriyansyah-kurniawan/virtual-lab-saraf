@@ -2,7 +2,7 @@ export const QUESTION_BANK = [
   {
     id: 1,
     soal:
-      "Penerima rangsangan awal (reseptor) saat jari menyentuh permukaan?",
+      "Penerima rangsangan awal (reseptor) saat air panas menyentuh permukaan?",
     opsi: {
       A: "Sumsum tulang belakang",
       B: "Kulit",
@@ -91,7 +91,7 @@ export const QUESTION_BANK = [
   },
   {
     id: 9,
-    soal: "Perhatikan simulasi ketika jari menyentuh permukaan dan muncul titik cahaya yang bergerak menuju saraf pusat. Titik cahaya tersebut menunjukkan…",
+    soal: "Perhatikan simulasi ketika air panas menyentuh permukaan dan muncul titik cahaya yang bergerak menuju saraf pusat. Titik cahaya tersebut menunjukkan…",
     opsi: {
       A: "Aliran darah",
       B: "Gerakan otot",
@@ -114,7 +114,7 @@ export const QUESTION_BANK = [
 ];
 
 export const ESAI_PROMPT =
-  "Jika seseorang mengalami kecelakaan yang menyebabkan saraf sensorik di tangannya putus, namun saraf motoriknya masih sehat, apa yang akan terjadi saat tangannya terkena api? Jelaskan pendapatmu!";
+  "Berdasarkan simulasi yang telah dilaksanakan, jelaskan bagaimana proses gerak refleks terjadi dan bagaimana peran sistem saraf dalam merespons rangsangan panas. Jelaskan pendapatmu berdasarkan hasil simulasi yang telah dilakukan!";
 
 export const BIBLIOGRAPHY = [
   "Campbell, N.A. et al. (2010). Biology: Concepts and Connections.",

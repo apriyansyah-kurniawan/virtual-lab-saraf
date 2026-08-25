@@ -30,7 +30,7 @@ export default function PageSimSensorik({ onBack, onNext }) {
               </span>
             </div>
             <p className="text-[10px] sm:text-xs text-slate-800 font-semibold leading-snug">
-              Sentuh tangan ke permukaan kulit untuk melihat transmisi impuls ke saraf pusat.
+             Studi Kasus : Seorang siswa tidak sengaja menumpahkan air panas ke permukaan kulit tangannya. Sentuh kulit yang terkena air panas di bawah ini untuk mengamati simulasi pergerakan impuls saraf saat terjadi gerak refleks.
             </p>
           </div>
 
@@ -42,7 +42,7 @@ export default function PageSimSensorik({ onBack, onNext }) {
               <img
                 src={imgJalurSensorik}
                 alt="Jalur Saraf Sensorik"
-                className="w-full h-full object-contain pointer-events-none drop-shadow-sm scale-[1.35] sm:scale-[1.45] z-0"
+                className="w-full h-full object-contain pointer-events-none drop-smoke scale-[1.35] sm:scale-[1.45] z-0"
               />
 
               {/* Tombol Tangan Vektor Interaktif (Besar, Cerah, & Presisi) */}
@@ -75,6 +75,45 @@ export default function PageSimSensorik({ onBack, onNext }) {
                 }`}>
                   {active ? 'MENYENTUH' : 'SENTUH KULIT'}
                 </span>
+              </div>
+
+              {/* Ilustrasi Gelas Air Panas Menuang & Beruap (Proporsional & Presisi) */}
+              <div
+                style={{ left: '10%', top: '25%', transform: 'translate(-50%, -50%)' }}
+                className="absolute pointer-events-none z-20 flex flex-col items-center select-none"
+              >
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28">
+                  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full overflow-visible">
+                    {/* Uap Panas di Atas Cangkir */}
+                    <g className="animate-pulse opacity-80">
+                      <path d="M 42 18 C 38 10, 46 6, 42 0" stroke="#94A3B8" strokeWidth="2.5" strokeLinecap="round" />
+                      <path d="M 52 20 C 48 12, 56 8, 50 2" stroke="#64748B" strokeWidth="2.5" strokeLinecap="round" />
+                      <path d="M 62 18 C 58 10, 66 6, 60 0" stroke="#94A3B8" strokeWidth="2.5" strokeLinecap="round" />
+                    </g>
+
+                    {/* Grup Cangkir & Curahan Air Menyatu */}
+                    <g className="animate-cup-pour">
+                      {/* Gagang Cangkir */}
+                      <path d="M 30 42 C 18 42 18 60 30 60" stroke="#0F172A" strokeWidth="3.5" fill="none" />
+
+                      {/* Bodi Cangkir Oranye */}
+                      <path d="M 34 32 L 68 32 L 62 68 C 62 72 58 74 50 74 C 42 74 38 72 38 68 Z" fill="#FB923C" stroke="#0F172A" strokeWidth="3.5" strokeLinejoin="round" />
+
+                      {/* Strip Hiasan Cangkir */}
+                      <path d="M 37 46 L 65 46" stroke="#FEF08A" strokeWidth="3" strokeLinecap="round" />
+
+                      {/* Mulut / Permukaan Air di Cangkir */}
+                      <ellipse cx="51" cy="32" rx="17" ry="5" fill="#38BDF8" stroke="#0F172A" strokeWidth="3" />
+
+                      {/* Aliran Air Tumpah dari Bibir Kanan Cangkir Menuju Permukaan Kulit */}
+<path d="M 56 34 Q 74 60 84 96 Q 75 96 65 42 Z" fill="#38BDF8" stroke="#0F172A" strokeWidth="2.5" strokeLinejoin="round" />
+
+                     {/* Percikan Air Hangat di Permukaan Kulit */}
+<circle cx="88" cy="94" r="2.5" fill="#38BDF8" stroke="#0F172A" strokeWidth="1.5" />
+<circle cx="78" cy="95" r="2" fill="#BAE6FD" />
+                    </g>
+                  </svg>
+                </div>
               </div>
 
               {/* Bola Energi Impuls Listrik Menyala (Glow Orb) */}
@@ -115,7 +154,7 @@ export default function PageSimSensorik({ onBack, onNext }) {
               Status: {active ? (
                 <span className="text-[#16A34A] animate-pulse">⚡ Impuls rangsangan sedang dihantarkan ke saraf pusat!</span>
               ) : (
-                <span className="text-slate-500">Klik tangan untuk memulai rangsangan...</span>
+                <span className="text-slate-500">Sentuh Kulit yang terkena air panas untuk memulai rangsangan...</span>
               )}
             </p>
             {active && (
