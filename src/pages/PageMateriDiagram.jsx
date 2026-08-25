@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import PageShell from '../components/PageShell';
 import neuronImg from '../assets/neuron.png'; // pastikan path import aset neuron ini sesuai
 import imgDendrit from '../assets/Copy of Virtual Lab Praktikum Sistem Saraf - 6.png';
@@ -66,20 +67,22 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
       <div className="min-h-[calc(100dvh-8rem)] w-full flex items-center justify-center p-3 sm:p-4">
 
         {/* Card Putih Utama */}
-        <div className="relative bg-white border-[4px] border-slate-900 rounded-[2.5rem] shadow-[8px_8px_0px_#000] px-6 py-5 w-full max-w-4xl flex flex-col items-center">
+        <div className="relative bg-white border-[3.5px] border-slate-900 rounded-[2rem] shadow-[6px_6px_0px_#000] p-4 sm:p-6 w-full max-w-4xl flex flex-col items-center my-auto overflow-hidden">
 
           {/* Header */}
           <div className="text-center mb-1">
-            <h1 className="font-['Press_Start_2P'] text-xs sm:text-sm md:text-base text-slate-900 tracking-wide mb-1">
+            <h1 className="font-['Press_Start_2P'] text-xs sm:text-sm text-slate-900 tracking-wide mb-1.5">
               STRUKTUR NEURON
             </h1>
-            <p className="text-[10px] sm:text-[11px] md:text-xs text-slate-600 font-semibold">
+            <p className="text-[9px] sm:text-[10px] text-slate-500 font-semibold mb-2">
               🚨 sentuh kolom untuk melihat materi
             </p>
           </div>
 
-          {/* Kanvas ViewBox 800 x 420 Terkunci Presisi Canva */}
-          <div className="relative w-full max-w-4xl aspect-[800/420] flex items-center justify-center select-none my-auto">
+          {/* Kanvas ViewBox 800 x 380 Terkunci Presisi Canva */}
+          {/* Wrapper Diagram dengan Scroll Horizontal Aman di HP */}
+          <div className="w-full overflow-x-auto overflow-y-hidden py-2 flex justify-start md:justify-center">
+            <div className="relative w-[680px] sm:w-[760px] md:w-full aspect-[800/380] min-w-[640px] md:min-w-0 mx-auto flex items-center justify-center select-none flex-shrink-0">
 
             {/* Gambar Ilustrasi Sel Neuron di Tengah */}
             <img
@@ -199,33 +202,52 @@ export default function PageMateriDiagram({ onBack, onNavigate }) {
             >
               SINAPSIS
             </button>
-
+            </div>
           </div>
 
         </div>
 
-        {/* Modal Info Organel */}
-        {selected && (
-          <div className="fixed inset-0 bg-black/40 flex items-center justify-center p-4 z-50">
-            <div className="bg-white border-[3.5px] border-slate-900 rounded-3xl shadow-[8px_8px_0px_#000] p-6 max-w-md w-full relative animate-scaleUp">
-              <div className="flex justify-between items-center border-b-2 border-slate-900 pb-3 mb-3">
-                <h3 className="font-['Press_Start_2P'] text-xs text-[#5CB85C]">
+        {/* Modal Info Organel using Portal */}
+        {selected && typeof document !== 'undefined' && createPortal(
+          <div
+            onClick={() => setSelected(null)}
+            className="fixed inset-0 w-screen h-[100dvh] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-[99999]"
+          >
+            {/* Card Putih Modal */}
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="relative bg-white border-[4px] border-slate-900 rounded-[2rem] shadow-[8px_8px_0px_#000] p-6 w-full max-w-md flex flex-col items-center animate-page-enter"
+            >
+              {/* Header Modal */}
+              <div className="w-full flex items-center justify-between border-b-2 border-slate-900 pb-3 mb-4">
+                <h3 className="font-['Press_Start_2P'] text-xs sm:text-sm text-[#16A34A]">
                   {selected.nama}
                 </h3>
                 <button
                   type="button"
                   onClick={() => setSelected(null)}
-                  className="w-9 h-9 bg-[#F87171] text-white border-2 border-slate-900 rounded-lg flex items-center justify-center font-bold text-xs hover:bg-[#EF4444] cursor-pointer"
+                  className="w-8 h-8 bg-[#F87171] hover:bg-[#EF4444] text-white border-2 border-slate-900 rounded-xl flex items-center justify-center font-bold text-xs shadow-[2px_2px_0px_#000] active:translate-y-0.5 cursor-pointer"
                 >
                   ✕
                 </button>
               </div>
-              <img src={selected.img} alt={selected.nama} className="w-full h-auto mb-4 rounded" />
-              <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-semibold">
+
+              {/* Container Gambar Organel Besar */}
+              <div className="w-full h-44 sm:h-52 flex items-center justify-center my-2 overflow-hidden bg-slate-50 border-2 border-slate-200 rounded-2xl p-4">
+                <img
+                  src={selected.img}
+                  alt={selected.nama}
+                  className="max-w-full max-h-full object-contain filter drop-shadow-md scale-[2.5] sm:scale-[2.8] transition-transform"
+                />
+              </div>
+
+              {/* Deskripsi */}
+              <p className="text-xs sm:text-sm text-slate-700 font-medium text-center leading-relaxed mt-3">
                 {selected.fungsi}
               </p>
             </div>
-          </div>
+          </div>,
+          document.body
         )}
 
       </div>
